@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+    nestjs:
+        build: .
+        volumes: 
+            - ./:/home/node/app
+        ports: 
+            - 3000:3000
+        entrypoint: .docker/entrypoint.sh
+        networks: 
+            - apache-kafka_apps_network
+
+networks: 
+    apache-kafka_apps_network:
+        external: true
