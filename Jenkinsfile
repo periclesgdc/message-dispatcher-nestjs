@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:15-alpine3.13'
+                    image 'node'
                     args '-p 3000:3000'
                 }
             }
